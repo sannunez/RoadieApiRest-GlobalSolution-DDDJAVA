@@ -22,7 +22,9 @@ public class TrilhaDeAprendizagem {
     @Column(nullable = false)
     private String nivel;
 
+
     @NotNull(message = "Campo Obrigatório")
+    @Min(value = 1, message = "A carga horária deve ser maior que zero")
     @Column(nullable = false)
     private Integer carga_horaria;
 
@@ -30,6 +32,8 @@ public class TrilhaDeAprendizagem {
     @NotBlank(message = "Campo Obrigatório")
     @Column(nullable = false)
     private String foco_principal;
+
+    public TrilhaDeAprendizagem(){}
 
     public TrilhaDeAprendizagem(Long id, String nome, String descricao, String nivel, int carga_horaria, String foco_principal) {
         this.id = id;
@@ -72,7 +76,7 @@ public class TrilhaDeAprendizagem {
         this.nivel = nivel;
     }
 
-    public int getCarga_horaria() {
+    public Integer getCarga_horaria() {
         return carga_horaria;
     }
 

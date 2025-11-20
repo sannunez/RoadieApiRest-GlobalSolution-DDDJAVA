@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Roadie Cadastro de Trilhas</title>
+</head>
+<body>
+    <form th:action="@{/trilhas/salvar}" th:object="${trilha}" method="post">
+
+        <label>Nome: </label>
+        <input type="text" th:field="*{nome}">
+        <p th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></p>
+
+        <label>Descrição: </label>
+        <input type="text" th:field="*{descricao}">
+        <p th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}"></p>
+
+        <label>Nível: </label>
+        <input type="text" th:field="*{nivel}">
+        <p th:if="${#fields.hasErrors('nivel')}" th:errors="*{nivel}"></p>
+
+        <label>Carga Horaria: </label>
+        <input type="number" th:field="*{carga_horaria}">
+        <p th:if="${#fields.hasErrors('carga_horaria')}" th:errors="*{carga_horaria}"></p>
+        <p th:if="${erroCarga}" th:text="${erroCarga}"></p>
+
+        <label>Foco: </label>
+        <input type="text" th:field="*{foco_principal}">
+        <p th:if="${#fields.hasErrors('foco_principal')}" th:errors="*{foco_principal}"></p>
+
+        <button type="submit">Cadastrar</button>
+    </form>
+
+</body>
+</html>

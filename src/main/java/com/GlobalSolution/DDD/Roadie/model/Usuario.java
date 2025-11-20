@@ -11,17 +11,20 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message = "Nome obrigatório")
     @Column(nullable = false, unique = true)
     private String nome;
 
     @NotBlank(message = "Email obrigatório")
-    @Email()
+    @Email(message = "Email inválido")
     @Column(nullable = false, unique = true)
     private String email;
 
     private String area_atuacao;
     private String nivel_carreira;
     private LocalDate data_cadastro;
+
+    public Usuario(){}
 
     public Usuario(Long id, String nome, String email, String area_atuacao, String nivel_carreira, LocalDate data_cadastro) {
         this.id = id;

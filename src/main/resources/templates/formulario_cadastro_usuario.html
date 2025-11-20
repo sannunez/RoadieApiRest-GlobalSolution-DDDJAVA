@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Roadie Cadastro de Usuários</title>
+</head>
+<body>
+    <form th:action="@{/usuarios/salvar}" th:object="${usuario}" method="post">
+
+        <label>Nome:</label>
+        <input type="text" th:field="*{nome}">
+        <p th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></p>
+        <br>
+
+        <label>Email:</label>
+        <input type="email" th:field="*{email}">
+        <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
+        <br>
+
+        <label>Area de Atuação:</label>
+        <input type="text" th:field="*{area_atuacao}">
+        <br>
+
+        <label>Nível de Carreira:</label>
+        <input type="text" th:field="*{nivel_carreira}">
+        <br>
+
+        <button type="submit">Cadastrar</button>
+    </form>
+</body>
+</html>
