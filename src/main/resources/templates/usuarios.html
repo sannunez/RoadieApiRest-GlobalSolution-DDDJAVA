@@ -11,14 +11,21 @@
     </div>
     <div class="container">
         <div class="card" th:each="usuario : ${listaUsuarios}">
+            <div>
             <h3 th:text="${usuario.nome}"></h3>
 
-            <p><span th:text="${usuario.id}"></span></p>
-            <p><span th:text="${usuario.nome}"></span></p>
-            <p><span th:text="${usuario.email}"></span></p>
-            <p><span th:text="${usuario.area_atuacao}"></span></p>
-            <p><span th:text="${usuario.nivel_carreira}"></span></p>
-            <p><span th:text="${usuario.data_cadastro}"></span></p>
+                <p><span th:text="${usuario.id}"></span></p>
+                <p><span th:text="${usuario.nome}"></span></p>
+                <p><span th:text="${usuario.email}"></span></p>
+                <p><span th:text="${usuario.area_atuacao}"></span></p>
+                <p><span th:text="${usuario.nivel_carreira}"></span></p>
+                <p><span th:text="${usuario.data_cadastro}"></span></p>
+
+            </div>
+
+            <a th:href="@{/usuarios/editar/{id}(id=${usuario.id})}">Editar</a>
+            <a th:href="@{/usuarios/deletar/{id}(id=${usuario.id})}">Deletar</a>
+
         </div>
     </div>
 

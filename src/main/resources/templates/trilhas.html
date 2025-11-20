@@ -20,6 +20,9 @@
             <p><span th:text="${trilha.carga_horaria}"></span></p>
             <p><span th:text="${trilha.foco_principal}"></span></p>
         </div>
+
+        <a th:href="@{/trilhas/editar/{id}(id=${trilha.id})}">Editar</a>
+        <a th:href="@{/trilhas/deletar/{id}(id=${trilha.id})}">Deletar</a>
     </div>
 </body>
 </html>

@@ -7,6 +7,8 @@
 <body>
     <form th:action="@{/trilhas/salvar}" th:object="${trilha}" method="post">
 
+        <input type="hidden" th:field="*{id}">
+
         <label>Nome: </label>
         <input type="text" th:field="*{nome}">
         <p th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></p>

@@ -6,10 +6,7 @@ import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/usuarios")
@@ -43,5 +40,16 @@ public class UsuarioController {
         return "redirect:/usuarios";
     }
 
+    @GetMapping("/deletar/{id}")
+    public String deletar(@PathVariable Long id){
+        service.deletar(id);
+        return "redirect:/usuarios";
+    }
+
+    @GetMapping("/editar/{id}")
+    public String editar(@PathVariable Long id, Model model){
+        model.addAttribute("usuario", service.buscarPorId(id));
+        return "formulario_cadastro_usuario";
+    }
 }
 
