@@ -4,6 +4,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 
+import java.util.List;
+
 @Entity
 public class TrilhaDeAprendizagem {
     @Id
@@ -32,6 +34,7 @@ public class TrilhaDeAprendizagem {
     @NotBlank(message = "Campo Obrigatório")
     @Column(nullable = false)
     private String foco_principal;
+
 
     public TrilhaDeAprendizagem(){}
 

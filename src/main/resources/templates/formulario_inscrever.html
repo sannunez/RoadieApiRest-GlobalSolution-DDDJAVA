@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Inscrever em Trilha</title>
+</head>
+<body>
+  <form th:action="@{/trilhas/inscrever}" th:object="${inscricaoFormulario}" method="post">
+    <h1>Inscrever usuario em: <span th:text="${trilhaNome}"></span></h1>
+
+    <input type="hidden" th:field="*{trilha.id}">
+
+    <label>Selecione o usuário:</label>
+    <select th:field="*{usuario.id}">
+      <option th:each="usuario : ${listaUsuarios}" th:value="${usuario.id}" th:text="${usuario.nome}"></option>
+    </select>
+
+    <button type="submit">Inscrever</button>
+  </form>
+  <div th:if="${mensagemErro}" class="alert alert-danger">
+    <span th:text="${mensagemErro}"></span>
+  </div>
+</body>
+</html>
