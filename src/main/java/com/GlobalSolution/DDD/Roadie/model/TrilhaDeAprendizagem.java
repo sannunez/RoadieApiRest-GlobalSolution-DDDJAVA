@@ -14,7 +14,7 @@ public class TrilhaDeAprendizagem {
     private Long id;
 
     @NotBlank(message = "Campo Obrigatório")
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String nome;
 
     @NotBlank(message = "Campo Obrigatório")
@@ -85,7 +85,7 @@ public class TrilhaDeAprendizagem {
         return carga_horaria;
     }
 
-    public void setCarga_horaria(int carga_horaria) {
+    public void setCarga_horaria(Integer carga_horaria) {
         this.carga_horaria = carga_horaria;
     }
 

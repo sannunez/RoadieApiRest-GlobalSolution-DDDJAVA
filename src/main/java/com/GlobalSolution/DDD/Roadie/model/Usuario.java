@@ -13,7 +13,7 @@ public class Usuario {
     private Long id;
 
     @NotBlank(message = "Nome obrigatório")
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private String nome;
 
     @NotBlank(message = "Email obrigatório")

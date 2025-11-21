@@ -6,9 +6,11 @@ import com.GlobalSolution.DDD.Roadie.model.Usuario;
 import com.GlobalSolution.DDD.Roadie.service.InscricaoService;
 import com.GlobalSolution.DDD.Roadie.service.TrilhaDeAprendizagemService;
 import jakarta.validation.Valid;
+import org.springframework.beans.propertyeditors.CustomNumberEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -98,4 +100,11 @@ public class TrilhaDeAprendizagemController {
         model.addAttribute("trilha", service.buscarPorId(id));
         return "formulario_cadastro_trilha";
     }
+
+    // Campo vazio = Null
+    @InitBinder
+    public void initBinder(WebDataBinder binder) {
+        binder.registerCustomEditor(Integer.class, new CustomNumberEditor(Integer.class, true));
+    }
+
 }

@@ -10,13 +10,12 @@
   <div class="formContainer">
     <form th:action="@{/trilhas/salvar}" th:object="${trilha}" method="post">
 
-        <p th:if="${erro}" th:text="${erro}" class="erro"></p>
-
         <input type="hidden" th:field="*{id}">
 
         <label>Nome:</label>
         <input type="text" th:field="*{nome}">
         <p th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></p>
+        <p th:if="${erroNome}" th:text="${erroNome}" class="erro"></p>
 
         <label>Descrição:</label>
         <input type="text" th:field="*{descricao}">
@@ -38,7 +37,6 @@
         <label>Carga Horária:</label>
         <input type="number" th:field="*{carga_horaria}">
         <p th:if="${#fields.hasErrors('carga_horaria')}" th:errors="*{carga_horaria}"></p>
-        <p th:if="${erroCarga}" th:text="${erroCarga}"></p>
 
         <label>Foco:</label>
         <input type="text" th:field="*{foco_principal}">
