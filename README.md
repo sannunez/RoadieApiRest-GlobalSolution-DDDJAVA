@@ -77,4 +77,16 @@ O projeto segue arquitetura MVC. Estrutura das pastas:
       - **Java 21**
       - **Git**
       - **Uma IDE (IntelliJ, VS Code, Eclipse – opcional)**
+        
+  - **2. Clonar o Repositório**
+  (No terminal de sua IDE)
+  ```bash
+    git clone https://github.com/sannunez/RoadieApiRest-GlobalSolution-DDDJAVA.git
+  ```
+  - **3. Abrir repositório**
+  - **4. Instalar dependencias Maven**
+  (No terminal de sua IDE)
+```bash
+mvn clean install
+```
 
