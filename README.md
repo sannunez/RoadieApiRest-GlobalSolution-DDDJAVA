@@ -77,16 +77,42 @@ O projeto segue arquitetura MVC. Estrutura das pastas:
       - **Java 21**
       - **Git**
       - **Uma IDE (IntelliJ, VS Code, Eclipse – opcional)**
-        
+      - **Banco de Dados MySql**
+##        
   - **2. Clonar o Repositório**
   (No terminal de sua IDE)
   ```bash
     git clone https://github.com/sannunez/RoadieApiRest-GlobalSolution-DDDJAVA.git
   ```
   - **3. Abrir repositório**
-  - **4. Instalar dependencias Maven**
+  - **4. Siga o caminho:**
+    ```bash
+    src/main/resources/application.properties
+    ```
+##
+  - **5. Localize:**
+    ```bash
+    spring.datasource.username=root
+    spring.datasource.password=NovaSenha123!
+    ```
+    - substitua "root" e "NovaSenha123!" pela seu próprio nome de usuario e senha respectivamente do seu banco de dados MySql.
+##      
+  - **6. Instalar dependencias Maven**
   (No terminal de sua IDE)
 ```bash
 mvn clean install
 ```
+##
+  - **7. Executar projeto**
+  (No terminal de sua IDE)
+```bash
+  ./mvnw spring-boot:run
+```
+## 
+  - **8. Abrir Browser(Navegador)
+    - Na barra de pesquisa:
+    ```bash
+    localhost:8080
+    ```
+    - E a API esta pronta para se utilizar.
 
