@@ -14,13 +14,13 @@ A Roadie ambiciona ser democrática a todos, buscando não apenas estar presente
 ---
 
 ## 📚 Sumário
-- [Sobre o Projeto](#sobre-o-projeto)
-- [Tecnologias e Versões](#tecnologias-e-versões)
-- [Arquitetura](#arquitetura)
-- [Como Executar o Projeto](#como-executar-o-projeto)
-- [Porta Padrão](#porta-padrão)
-- [Endpoints e Exemplos de Requisição](#endpoints-e-exemplos-de-requisição)
-- [Autores](#autores)
+- Sobre o Projeto
+- Tecnologias e Versões
+- Arquitetura
+- Como Executar o Projeto
+- Porta Padrão
+- Endpoints e Exemplos de Requisição
+- Autores
 
 ---
 
