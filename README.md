@@ -65,7 +65,7 @@ O projeto segue arquitetura MVC. Estrutura das pastas:
   - model/ → Entidades JPA
   - exceptions/ → Exceptions personalizadas + handler global
 
-## Como Executar o Projeto:
+## 🚀 Como Executar o Projeto:
   - **1. Pré-requisitos**
     - **Antes de iniciar, certifique-se de ter instalado:**
       - **Java 21**
