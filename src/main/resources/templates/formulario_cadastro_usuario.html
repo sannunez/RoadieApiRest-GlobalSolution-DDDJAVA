@@ -8,17 +8,21 @@
 <body>
 
   <div class="formContainer">
-    <form th:action="@{/usuarios/salvar}" th:object="${usuario}" method="post">
+
+      <form th:action="@{/usuarios/salvar}" th:object="${usuario}" method="post">
 
         <input type="hidden" th:field="*{id}">
 
         <label>Nome:</label>
         <input type="text" th:field="*{nome}">
         <p th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></p>
+        <p th:if="${erroNome}" th:text="${erroNome}" class="erro"></p>
 
-        <label>Email:</label>
+          <label>Email:</label>
         <input type="email" th:field="*{email}">
         <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
+        <p th:if="${erroEmail}" th:text="${erroEmail}" class="erro"></p>
+
 
         <label>Área de Atuação:</label>
         <input type="text" th:field="*{area_atuacao}">

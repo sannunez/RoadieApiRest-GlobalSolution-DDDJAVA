@@ -10,6 +10,8 @@
   <div class="formContainer">
     <form th:action="@{/trilhas/salvar}" th:object="${trilha}" method="post">
 
+        <p th:if="${erro}" th:text="${erro}" class="erro"></p>
+
         <input type="hidden" th:field="*{id}">
 
         <label>Nome:</label>

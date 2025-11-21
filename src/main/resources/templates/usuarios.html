@@ -13,10 +13,13 @@
     <div class="container">
         <div class="card" th:each="usuario : ${listaUsuarios}">
             <div class="userContent">
+
                 <div class="headerProfile">
                     <img class="profile-pic" th:src="@{/images/profile-circle-svgrepo-com 1.svg}" alt="ProfileIcon">
                     <h3 th:text="${usuario.nome}"></h3>
                 </div>
+
+
                 <div class="infosContainer">
                     <div class="infosDiv">
                         <p>ID: <span th:text="${usuario.id}"></span></p>

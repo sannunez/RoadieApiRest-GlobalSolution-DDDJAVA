@@ -1,5 +1,6 @@
 package com.GlobalSolution.DDD.Roadie.controller;
 
+import com.GlobalSolution.DDD.Roadie.exceptions.UsuarioJaExistenteException;
 import com.GlobalSolution.DDD.Roadie.model.TrilhaDeAprendizagem;
 import com.GlobalSolution.DDD.Roadie.model.Usuario;
 import com.GlobalSolution.DDD.Roadie.service.InscricaoService;
@@ -57,14 +58,35 @@ public class UsuarioController {
     }
 
     @PostMapping("/salvar")
-    public String salvar(@Valid @ModelAttribute("usuario") Usuario usuario, BindingResult result){
-        if (result.hasErrors()){
-            return "formulario_cadastro_usuario";
+    public String salvar(
+            @Valid @ModelAttribute("usuario") Usuario usuario,
+            BindingResult result,
+            Model model
+    ) {
+        if (result.hasErrors()) {
+            return "formulario_cadastro_usuario"; // CORRIGIDO
         }
 
-        service.salvar(usuario);
+        try {
+            service.salvar(usuario);
+
+        } catch (UsuarioJaExistenteException ex) {
+
+            System.err.println("----------------------------------------------------");
+            System.err.println("ERRO 400 - Email já cadastrado");
+            System.err.println("Mensagem: " + ex.getMessage());
+            System.err.println("Endpoint: POST /usuarios/salvar");
+            System.err.println("----------------------------------------------------");
+
+            model.addAttribute("erroEmail", ex.getMessage());
+            return "formulario_cadastro_usuario"; // CORRIGIDO
+        }
+
         return "redirect:/usuarios";
     }
+
+
+
 
     @GetMapping("/deletar/{id}")
     public String deletar(@PathVariable Long id){

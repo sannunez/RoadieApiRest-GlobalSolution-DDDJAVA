@@ -1,0 +1,11 @@
+package com.GlobalSolution.DDD.Roadie.exceptions;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
+
+@ResponseStatus(HttpStatus.NOT_FOUND) // 404
+public class UsuarioNaoEncontradoException extends RuntimeException {
+  public UsuarioNaoEncontradoException(String message) {
+    super(message);
+  }
+}

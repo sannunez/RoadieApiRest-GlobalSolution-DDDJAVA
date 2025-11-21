@@ -1,5 +1,6 @@
 package com.GlobalSolution.DDD.Roadie.controller;
 
+import com.GlobalSolution.DDD.Roadie.exceptions.TrilhaJaExistenteException;
 import com.GlobalSolution.DDD.Roadie.model.TrilhaDeAprendizagem;
 import com.GlobalSolution.DDD.Roadie.model.Usuario;
 import com.GlobalSolution.DDD.Roadie.service.InscricaoService;
@@ -51,14 +52,37 @@ public class TrilhaDeAprendizagemController {
     }
 
     @PostMapping("/salvar")
-    public String salvar(@Valid @ModelAttribute ("trilha") TrilhaDeAprendizagem trilha, BindingResult result){
-        if (result.hasErrors()){
+    public String salvar(
+            @Valid @ModelAttribute("trilha") TrilhaDeAprendizagem trilha,
+            BindingResult result,
+            Model model
+    ) {
+
+        if (result.hasErrors()) {
             return "formulario_cadastro_trilha";
         }
 
-        service.salvar(trilha);
+        try {
+            service.salvar(trilha);
+
+        } catch (TrilhaJaExistenteException ex) {
+            // LOG BONITO NO TERMINAL
+            System.err.println("----------------------------------------------------");
+            System.err.println("ERRO 400 - Trilha duplicada");
+            System.err.println("Mensagem: " + ex.getMessage());
+            System.err.println("Endpoint: POST /trilhas/salvar");
+            System.err.println("----------------------------------------------------");
+
+            // mensagem na tela
+            model.addAttribute("erroNome", ex.getMessage());
+
+            return "formulario_cadastro_trilha";
+        }
+
         return "redirect:/trilhas";
     }
+
+
 
     @GetMapping("/deletar/{id}")
     public String deletar(@PathVariable Long id){
