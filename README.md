@@ -4,13 +4,13 @@
 
 ---
 
-- ## ✍️ Autores
+## ✍️ Autores
   - **Guilherme Santos Nunes | RM: 558989**
   - **Kaique Rodrigues Zaffarani | RM: 556677**
   - **Kairo da Silva Silvestre Carvalho | RM: 558288**
     
 ---
-# Sobre Nós
+# 🌟 Sobre Nós:
 
 A Roadie é uma plataforma de aprimoramento e transição profissional que projeta um universo virtual imersivo estruturado em roadmaps, permitindo pessoas de múltiplas gerações se adaptarem às novas exigências do mercado de trabalho. O usuário descobrirá profissões emergentes mais afinadas aos interesses e habilidades que já possui, promovendo evolução ou suave transição profissional através de constelações de requisitos técnicos e didáticos que se interligam dentro do que apelidamos de formaverso.
  
@@ -86,20 +86,20 @@ O projeto segue arquitetura MVC. Estrutura das pastas:
   - **2. Clonar o Repositório**
   (No terminal de sua IDE)
   ```bash
-    git clone https://github.com/sannunez/RoadieApiRest-GlobalSolution-DDDJAVA.git
+  git clone https://github.com/sannunez/RoadieApiRest-GlobalSolution-DDDJAVA.git
   ```
   - **3. Abrir repositório**
   - **4. Siga o caminho:**
-    ```bash
-    src/main/resources/application.properties
-    ```
+  ```bash
+  src/main/resources/application.properties
+  ```
 ##
   - **5. Localize:**
-    ```bash
-    spring.datasource.username=root
-    spring.datasource.password=NovaSenha123!
-    ```
-    - substitua "root" e "NovaSenha123!" pela seu próprio nome de usuario e senha respectivamente do seu banco de dados MySql.
+```bash
+spring.datasource.username=root
+spring.datasource.password=NovaSenha123!
+```
+  - substitua "root" e "NovaSenha123!" pela seu próprio nome de usuario e senha respectivamente do seu banco de dados MySql.
 ##      
   - **6. Instalar dependencias Maven**
   (No terminal de sua IDE)
@@ -114,11 +114,11 @@ mvn clean install
 ```
 ## 
   - **8. Abrir Browser(Navegador)**
-    - Na barra de pesquisa:
-    ```bash
-    localhost:8080
-    ```
-    - E a API está pronta para se utilizar.
+  - Na barra de pesquisa:
+```bash
+localhost:8080
+```
+  - E a API está pronta para se utilizar.
 ---
 
 ## 🚪 Porta Padrão:
