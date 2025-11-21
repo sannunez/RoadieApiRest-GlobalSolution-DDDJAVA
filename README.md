@@ -118,6 +118,54 @@ mvn clean install
 
 ---
 - ## 🔗 Endpoints e Exemplos de Requisição
+- **Endpoints de entidade de Usuário:**
+  
+  GET /usuarios - Lista usuários já cadastrados.
+  <br>Procedimento: Em home, selecione a opção usuários.
+  
+  GET /usuarios/cadastrar_usuarios - Abre formulário de Cadastro.
+  <br>Procedimento: Em tela de usuários, selecione "Cadastrar".
+  
+  POST /usuarios/salvar = Cria/Cadastra novo usuário.
+  <br>Procedimento: Em formulário, insira os dados de cada campo e clique em "Cadastrar".
+  
+  GET /usuarios/deletar/{id} - Deleta usuário.
+  <br>Procedimento: Em tela de usuarios, clique em "Deletar", para excluir usuario.
+  
+  GET /usuarios/editar/{id} - Abre formulário de Cadastro e permite editar usuário.
+  <br>Procedimento: Em tela de usuarios, clique em "Editar", para editar usuário.
+
+##
+
+- **Endpoints de entidade de Trilhas de Aprendizagem:**
+
+  GET /trilhas - Lista todas as trilhas cadastradas e mostra a quantidade de inscritos.
+  <br>Procedimento: Em home, clique em "Trilhas".
+
+  GET /trilhas/cadastrar_trilha - Abre o formulário de cadastro de nova trilha.
+  <br>Procedimento: Na tela de trilhas, clique em "Cadastrar".
+
+  POST /trilhas/salvar - Cria uma nova trilha de aprendizagem.
+  <br>Procedimento: No formulário, preencha os campos obrigatórios e clique em "Cadastrar".
+
+  GET /trilhas/deletar/{id} - Remove uma trilha existente.
+  <br>Procedimento: Na tela de trilhas, clique em "Deletar" na trilha desejada.
+
+  GET /trilhas/editar/{id} - Abre o formulário para edição de uma trilha.
+  <br>Procedimento: Na tela de trilhas, clique em "Editar" na trilha escolhida.
+
+##
+  
+- **Endpoints de entidade de Inscrição:**
+  
+  GET /trilhas/inscrever_trilha/{id} - Abre o formulário de inscrição de um usuário em uma trilha específica.
+  <br>Procedimento: Em tela de trilhas, clique em "Inscrever" na trilha desejada.
+
+  POST /trilhas/inscrever -Realiza a inscrição do usuário em uma trilha.
+  <br>Procedimento: No formulário, selecione o usuário e confirme clicando em "Inscrever".
+
+  GET /inscricoes/cancelar/{userId}/{trilhaId} - Cancela a inscrição do usuário em uma trilha.
+  <br>Procedimento: Na tela de usuários, clique em "Cancelar inscrição" para remover o vínculo entre usuário e trilha.
 
 ---
 - ## ✍️ Autores
