@@ -47,7 +47,7 @@ O projeto permite:
 
 ---
 
-## Principais dependencias Spring & Maven:
+## 🧩 Principais dependencias Spring & Maven:
 
 - **MySql Driver:** *MySQL JDBC driver.*
 - **Spring Data JPA:** *Persist data in SQL stores with Java Persistence API using Spring Data and Hibernate.*
@@ -109,8 +109,18 @@ mvn clean install
     localhost:8080
     ```
     - E a API esta pronta para se utilizar.
+---
 
-## Porta Padrão:
+## 🚪 Porta Padrão:
   ```bash
     localhost:8080
   ```
+
+---
+- ## 🔗 Endpoints e Exemplos de Requisição
+
+---
+- ## ✍️ Autores
+  - **Guilherme Santos Nunes | RM: 558989**
+  - **Kaique Rodrigues Zaffarani | RM: 556677**
+  - **Kairo da Silva Silvestre Carvalho | RM: 558288**
