@@ -116,3 +116,7 @@ mvn clean install
     ```
     - E a API esta pronta para se utilizar.
 
+## Porta Padrão:
+  ```bash
+    localhost:8080
+  ```
