@@ -9,7 +9,7 @@ import jakarta.persistence.*;
         uniqueConstraints = {@UniqueConstraint(columnNames = {"usuario_id", "trilha_id"})}
 )
 public class Inscricao {
-
+    // ATRIBUTOS
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -22,6 +22,7 @@ public class Inscricao {
     @JoinColumn(name = "trilha_id", nullable = false)
     private TrilhaDeAprendizagem trilha;
 
+    // CONSTRUTORES
     public Inscricao(){};
 
     public Inscricao(Long id, Usuario usuario, TrilhaDeAprendizagem trilha) {
@@ -30,6 +31,7 @@ public class Inscricao {
         this.trilha = trilha;
     }
 
+    // GET e SETTERS
     public Long getId() {
         return id;
     }

@@ -12,10 +12,12 @@ import java.util.List;
 
 @Service
 public class InscricaoService {
+    // REPOSITORY
     private InscricaoRepository repository;
 
     public InscricaoService(InscricaoRepository repository){this.repository = repository;}
 
+    // SALVAR(CREATE)
     public void salvar(Usuario usuario, TrilhaDeAprendizagem trilha){
         try{
             Inscricao inscricao = new Inscricao();
@@ -29,15 +31,20 @@ public class InscricaoService {
 
     }
 
+    // LISTAR TODAS
     public List<Inscricao> listarTodos(){return repository.findAll();}
 
+    // READ
     public Inscricao buscarPorId(Long id){return repository.findById(id).orElse(null);}
 
+    // DELETE
     public void deletar(Long id){repository.deleteById(id);}
 
+    // CONTADOR DE INSCRIÇÕES QUE USUARIO POSSUI
     public int contarInscricoesPorUsuario(Long usuarioId){
         return repository.countByUsuarioId(usuarioId);
     }
+
 
     public List<TrilhaDeAprendizagem> listarTrilhasDoUsuario(Long usuarioId) {
         List<Inscricao> inscricoes = repository.findByUsuarioId(usuarioId);
@@ -46,10 +53,12 @@ public class InscricaoService {
                 .toList();
     }
 
+    // CONTADOR DE USUARIOS QUE UMA TRILHA POSSUI CADASTRADOS
     public int contarInscricoesEmTrilha(Long trilhaId){
         return repository.countByTrilhaId(trilhaId);
     }
 
+    // DELETE(CANCELAR INSCRICAO)
     public void cancelarInscricao(Long usuarioId, Long trilhaId) {
         Inscricao inscricao = repository
                 .findByUsuarioIdAndTrilhaId(usuarioId, trilhaId);

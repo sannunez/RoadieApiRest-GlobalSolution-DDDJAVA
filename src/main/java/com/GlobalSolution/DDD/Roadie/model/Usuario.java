@@ -7,6 +7,7 @@ import java.time.LocalDate;
 
 @Entity
 public class Usuario {
+    // ATRIBUTOS
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -24,6 +25,7 @@ public class Usuario {
     private String nivel_carreira;
     private LocalDate data_cadastro;
 
+    // CONSTRUTORES
     public Usuario(){}
 
     public Usuario(Long id, String nome, String email, String area_atuacao, String nivel_carreira, LocalDate data_cadastro) {
@@ -35,6 +37,7 @@ public class Usuario {
         this.data_cadastro = data_cadastro;
     }
 
+    // GETTERS E SETTERS
     public Long getId() {
         return id;
     }

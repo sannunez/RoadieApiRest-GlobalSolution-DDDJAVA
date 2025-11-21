@@ -18,7 +18,7 @@ import java.util.Map;
 @Controller
 @RequestMapping("/trilhas")
 public class TrilhaDeAprendizagemController {
-
+    // SERVICES
     private final TrilhaDeAprendizagemService service;
     private final InscricaoService inscricaoService;
 
@@ -27,6 +27,7 @@ public class TrilhaDeAprendizagemController {
         this.inscricaoService = inscricaoService;
     }
 
+    // READ
     @GetMapping
     public String trilhas(Model model){
 
@@ -44,6 +45,7 @@ public class TrilhaDeAprendizagemController {
         return "trilhas";
     }
 
+    // CREATE
     @GetMapping("/cadastrar_trilha")
     public String pagina_cadastro(Model model){
         model.addAttribute("trilha", new TrilhaDeAprendizagem());
@@ -66,7 +68,7 @@ public class TrilhaDeAprendizagemController {
             service.salvar(trilha);
 
         } catch (TrilhaJaExistenteException ex) {
-            // LOG BONITO NO TERMINAL
+            // TERMINAL
             System.err.println("----------------------------------------------------");
             System.err.println("ERRO 400 - Trilha duplicada");
             System.err.println("Mensagem: " + ex.getMessage());
@@ -83,13 +85,14 @@ public class TrilhaDeAprendizagemController {
     }
 
 
-
+    // DELETE
     @GetMapping("/deletar/{id}")
     public String deletar(@PathVariable Long id){
         service.deletar(id);
         return "redirect:/trilhas";
     }
 
+    // UPDATE
     @GetMapping("/editar/{id}")
     public String editar(@PathVariable Long id, Model model){
         model.addAttribute("trilha", service.buscarPorId(id));

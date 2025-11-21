@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class InscricaoController {
+    //  SERVICES
     private final InscricaoService service;
     private  final UsuarioService usuarioService;
     private  final TrilhaDeAprendizagemService trilhaService;
@@ -26,6 +27,7 @@ public class InscricaoController {
         this.trilhaService = trilhaService;
     }
 
+    //  CREATE
     @GetMapping("/trilhas/inscrever_trilha/{id}")
     public String pagina_inscrever(@PathVariable Long id, Model model){
 
@@ -62,6 +64,7 @@ public class InscricaoController {
 
     }
 
+    // DELETE
     @GetMapping("/inscricoes/cancelar/{userId}/{trilhaId}")
     public String cancelarInscricao(@PathVariable("userId") Long usuarioId,
                                     @PathVariable Long trilhaId) {

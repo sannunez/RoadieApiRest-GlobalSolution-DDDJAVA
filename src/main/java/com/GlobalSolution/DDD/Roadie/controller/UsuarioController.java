@@ -18,7 +18,7 @@ import java.util.Map;
 @Controller
 @RequestMapping("/usuarios")
 public class UsuarioController {
-
+    // SERVICES
     private final UsuarioService service;
     private final InscricaoService inscricaoService;
 
@@ -27,6 +27,7 @@ public class UsuarioController {
         this.inscricaoService = inscricaoService;
     }
 
+    // READ
     @GetMapping
     public String usuarios(Model model){
 
@@ -51,6 +52,7 @@ public class UsuarioController {
         return "usuarios";
     }
 
+    // CREATE
     @GetMapping("/cadastrar_usuarios")
     public String pagina_cadastro(Model model){
         model.addAttribute("usuario", new Usuario());
@@ -86,14 +88,14 @@ public class UsuarioController {
     }
 
 
-
-
+    // DELETE
     @GetMapping("/deletar/{id}")
     public String deletar(@PathVariable Long id){
         service.deletar(id);
         return "redirect:/usuarios";
     }
 
+    // UPDATE
     @GetMapping("/editar/{id}")
     public String editar(@PathVariable Long id, Model model){
         model.addAttribute("usuario", service.buscarPorId(id));

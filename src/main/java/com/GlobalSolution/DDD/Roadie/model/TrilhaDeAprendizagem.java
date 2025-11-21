@@ -8,6 +8,7 @@ import java.util.List;
 
 @Entity
 public class TrilhaDeAprendizagem {
+    // ATRIBUTOS
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -35,7 +36,7 @@ public class TrilhaDeAprendizagem {
     @Column(nullable = false)
     private String foco_principal;
 
-
+    // CONSTRUTORES
     public TrilhaDeAprendizagem(){}
 
     public TrilhaDeAprendizagem(Long id, String nome, String descricao, String nivel, int carga_horaria, String foco_principal) {
@@ -47,6 +48,7 @@ public class TrilhaDeAprendizagem {
         this.foco_principal = foco_principal;
     }
 
+    // GETTERS e SETTERS
     public Long getId() {
         return id;
     }
