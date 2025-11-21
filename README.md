@@ -2,7 +2,16 @@
 
 # Roadie — Plataforma Imersiva de Aprimoramento Profissional
 
+---
+
+- ## ✍️ Autores
+  - **Guilherme Santos Nunes | RM: 558989**
+  - **Kaique Rodrigues Zaffarani | RM: 556677**
+  - **Kairo da Silva Silvestre Carvalho | RM: 558288**
+    
+---
 # Sobre Nós
+
 A Roadie é uma plataforma de aprimoramento e transição profissional que projeta um universo virtual imersivo estruturado em roadmaps, permitindo pessoas de múltiplas gerações se adaptarem às novas exigências do mercado de trabalho. O usuário descobrirá profissões emergentes mais afinadas aos interesses e habilidades que já possui, promovendo evolução ou suave transição profissional através de constelações de requisitos técnicos e didáticos que se interligam dentro do que apelidamos de formaverso.
  
 Ao longo da jornada, um currículo personalizado e dinâmico é construído, permitindo empresas parceiras acessá-lo e realizar recrutamentos. Instituições de ensino poderão fornecer novas estrelas – cursos relacionados – enriquecendo constelações e oferecendo progressão de aprendizado ao usuário, para que assim avance sua carreira com propósito.
@@ -14,6 +23,7 @@ A Roadie ambiciona ser democrática a todos, buscando não apenas estar presente
 ---
 
 ## 📚 Sumário
+- Autores
 - Sobre o Projeto
 - Tecnologias e Versões
 - Arquitetura
@@ -21,7 +31,6 @@ A Roadie ambiciona ser democrática a todos, buscando não apenas estar presente
 - Porta Padrão
 - Endpoints e Exemplos de Requisição
 - Tratamento de Erros
-- Autores
 
 ---
 
@@ -104,12 +113,12 @@ mvn clean install
   ./mvnw spring-boot:run
 ```
 ## 
-  - **8. Abrir Browser(Navegador)
+  - **8. Abrir Browser(Navegador)**
     - Na barra de pesquisa:
     ```bash
     localhost:8080
     ```
-    - E a API esta pronta para se utilizar.
+    - E a API está pronta para se utilizar.
 ---
 
 ## 🚪 Porta Padrão:
@@ -175,8 +184,3 @@ mvn clean install
 <img src="assets/img/ErroInterface.png" width="60%" />
 <img src="assets/img/ErroTerminal.png" width="40%" />
 
----
-- ## ✍️ Autores
-  - **Guilherme Santos Nunes | RM: 558989**
-  - **Kaique Rodrigues Zaffarani | RM: 556677**
-  - **Kairo da Silva Silvestre Carvalho | RM: 558288**
