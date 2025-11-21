@@ -50,4 +50,14 @@ public class InscricaoService {
         return repository.countByTrilhaId(trilhaId);
     }
 
+    public void cancelarInscricao(Long usuarioId, Long trilhaId) {
+        Inscricao inscricao = repository
+                .findByUsuarioIdAndTrilhaId(usuarioId, trilhaId);
+
+        if (inscricao != null) {
+            repository.delete(inscricao);
+        }
+    }
+
+
 }

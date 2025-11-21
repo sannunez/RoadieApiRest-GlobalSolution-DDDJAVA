@@ -123,3 +123,29 @@ h3{
 .inscritoTrilhas{
     margin-top: 10px;
 }
+
+.listaTrilhas li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #12091C;
+    padding: 10px 15px;
+    border: 2px solid #59176E;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.btnCancel{
+    padding: 5px 15px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: #E94D4D;
+    color: white;
+    border: 2px solid #E94D4D;
+}
+
+.btnCancel:hover{
+    background-color: #020202;
+    transition: 0.2s;
+}

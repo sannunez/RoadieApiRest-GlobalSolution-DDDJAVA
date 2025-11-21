@@ -77,5 +77,7 @@ public class UsuarioController {
         model.addAttribute("usuario", service.buscarPorId(id));
         return "formulario_cadastro_usuario";
     }
+
+
 }
 

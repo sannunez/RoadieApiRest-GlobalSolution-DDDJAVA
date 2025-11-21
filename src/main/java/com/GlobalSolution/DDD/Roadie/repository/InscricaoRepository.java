@@ -13,4 +13,7 @@ public interface InscricaoRepository extends JpaRepository<Inscricao, Long> {
 
     int countByTrilhaId(Long trilhaId);
 
+    Inscricao findByUsuarioIdAndTrilhaId(Long usuarioId, Long trilhaId);
+
+
 }

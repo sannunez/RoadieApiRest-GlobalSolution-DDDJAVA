@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+  <meta charset="UTF-8">
   <title>Roadie Home</title>
+  <link rel="stylesheet" th:href="@{/css/home.css}">
 </head>
-  <body>
-    <a th:href="@{/usuarios}">Usuarios</a>
+<body>
+  <img th:src="@{/images/Roadie.svg}" alt="ROADIE LOGO">
+  <p>Roadie é uma plataforma imersiva de aprimoramento profissional que ajuda pessoas a descobrirem carreiras emergentes alinhadas aos seus interesses e habilidades. Com roadmaps interativos e constelações de aprendizado, preparamos profissionais para as novas demandas do mercado, conectando educação e oportunidades reais de emprego em um ambiente colaborativo e dinâmico.</p>
+  <div class="container">
+    <a th:href="@{/usuarios}">Usuários</a>
     <a th:href="@{/trilhas}">Trilhas</a>
-  </body>
+  </div>
+</body>
 </html>
+

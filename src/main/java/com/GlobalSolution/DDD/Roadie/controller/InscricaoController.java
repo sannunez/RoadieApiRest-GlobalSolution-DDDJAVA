@@ -62,4 +62,13 @@ public class InscricaoController {
 
     }
 
+    @GetMapping("/inscricoes/cancelar/{userId}/{trilhaId}")
+    public String cancelarInscricao(@PathVariable("userId") Long usuarioId,
+                                    @PathVariable Long trilhaId) {
+
+        service.cancelarInscricao(usuarioId, trilhaId);
+        return "redirect:/usuarios";
+    }
+
+
 }

@@ -35,9 +35,14 @@
             </div>
 
             <h3 class="inscritoTrilhas" th:if="${inscricoesCount[usuario.id] > 0}">Inscrito em: <span th:text="${inscricoesCount[usuario.id]}"></span> trilha(s)</h3>
-            <ul>
-                <li th:each="trilha : ${trilhasPorUsuario[usuario.id]}"
-                    th:text="${trilha.nome}">
+            <ul class="listaTrilhas">
+                <li th:each="trilha : ${trilhasPorUsuario[usuario.id]}">
+                    <span th:text="${trilha.nome}"></span>
+
+                    <a class="btnCancel"
+                       th:href="@{/inscricoes/cancelar/{userId}/{trilhaId}(userId=${usuario.id}, trilhaId=${trilha.id})}">
+                        Cancelar
+                    </a>
                 </li>
             </ul>
 
