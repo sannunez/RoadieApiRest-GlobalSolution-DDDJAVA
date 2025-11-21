@@ -18,14 +18,8 @@ A Roadie ambiciona ser democrática a todos, buscando não apenas estar presente
 - [Tecnologias e Versões](#tecnologias-e-versões)
 - [Arquitetura](#arquitetura)
 - [Como Executar o Projeto](#como-executar-o-projeto)
-  - [Pré-requisitos](#pré-requisitos)
-  - [Instalar dependências](#instalar-dependências)
-  - [Rodar a aplicação](#rodar-a-aplicação)
 - [Porta Padrão](#porta-padrão)
 - [Endpoints e Exemplos de Requisição](#endpoints-e-exemplos-de-requisição)
-  - [Usuários](#usuários)
-  - [Trilhas](#trilhas)
-  - [Inscrições](#inscrições)
 - [Autores](#autores)
 
 ---
