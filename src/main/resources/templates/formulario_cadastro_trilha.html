@@ -3,35 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <title>Roadie Cadastro de Trilhas</title>
+    <link rel="stylesheet" th:href="@{/css/formulario_cadastro_trilha.css}">
 </head>
 <body>
+
+  <div class="formContainer">
     <form th:action="@{/trilhas/salvar}" th:object="${trilha}" method="post">
 
         <input type="hidden" th:field="*{id}">
 
-        <label>Nome: </label>
+        <label>Nome:</label>
         <input type="text" th:field="*{nome}">
         <p th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></p>
 
-        <label>Descrição: </label>
+        <label>Descrição:</label>
         <input type="text" th:field="*{descricao}">
         <p th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}"></p>
 
-        <label>Nível: </label>
-        <input type="text" th:field="*{nivel}">
+        <label>Nível:</label>
+        <select th:field="*{nivel}">
+            <option value="">-- Selecione --</option>
+            <option value="Basico">Básico</option>
+            <option value="Intermediario">Intermediário</option>
+            <option value="Avancado">Avançado</option>
+            <option value="Especialista">Especialista</option>
+            <option value="Intensivo">Intensivo</option>
+            <option value="Fundamentos">Fundamentos</option>
+            <option value="Iniciante">Iniciante</option>
+        </select>
         <p th:if="${#fields.hasErrors('nivel')}" th:errors="*{nivel}"></p>
 
-        <label>Carga Horaria: </label>
+        <label>Carga Horária:</label>
         <input type="number" th:field="*{carga_horaria}">
         <p th:if="${#fields.hasErrors('carga_horaria')}" th:errors="*{carga_horaria}"></p>
         <p th:if="${erroCarga}" th:text="${erroCarga}"></p>
 
-        <label>Foco: </label>
+        <label>Foco:</label>
         <input type="text" th:field="*{foco_principal}">
         <p th:if="${#fields.hasErrors('foco_principal')}" th:errors="*{foco_principal}"></p>
 
-        <button type="submit">Cadastrar</button>
+        <button type="submit" class="btnPrp">Cadastrar</button>
+        <a class="btnPrp" th:href="@{/trilhas}">Voltar</a>
     </form>
+  </div>
 
 </body>
 </html>

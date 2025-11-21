@@ -3,22 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>Inscrever em Trilha</title>
+    <link rel="stylesheet" th:href="@{/css/formulario_inscrever.css}">
 </head>
 <body>
-  <form th:action="@{/trilhas/inscrever}" th:object="${inscricaoFormulario}" method="post">
-    <h1>Inscrever usuario em: <span th:text="${trilhaNome}"></span></h1>
 
-    <input type="hidden" th:field="*{trilha.id}">
+  <div class="formContainer">
+    <form th:action="@{/trilhas/inscrever}" th:object="${inscricaoFormulario}" method="post">
 
-    <label>Selecione o usuário:</label>
-    <select th:field="*{usuario.id}">
-      <option th:each="usuario : ${listaUsuarios}" th:value="${usuario.id}" th:text="${usuario.nome}"></option>
-    </select>
+      <h1>Inscrever usuário em: <span th:text="${trilhaNome}"></span></h1>
 
-    <button type="submit">Inscrever</button>
-  </form>
-  <div th:if="${mensagemErro}" class="alert alert-danger">
-    <span th:text="${mensagemErro}"></span>
+      <input type="hidden" th:field="*{trilha.id}">
+
+      <label>Selecione o usuário:</label>
+      <select th:field="*{usuario.id}">
+        <option th:each="usuario : ${listaUsuarios}"
+                th:value="${usuario.id}"
+                th:text="${usuario.nome}"></option>
+      </select>
+
+      <button type="submit" class="btnPrp">Inscrever</button>
+      <a class="btnPrp" th:href="@{/trilhas}">Voltar</a>
+    </form>
+
+    <div th:if="${mensagemErro}" class="alert">
+        <span th:text="${mensagemErro}"></span>
+    </div>
   </div>
+
 </body>
 </html>

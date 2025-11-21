@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body{
+    background: linear-gradient(0deg, rgba(12, 13, 17, 1) 0%, rgba(17, 20, 25, 1) 50%, rgba(12, 13, 17, 1) 100%);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+.formContainer{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    margin: 40px auto;
+    background-color: #020202;
+    border-radius: 20px;
+    border: 2px solid #59176E;
+    padding: 30px;
+}
+
+form{
+    width: 100%;
+    margin: 0 15% 0 15%;
+}
+
+label{
+    margin-top: 15px;
+    display: block;
+    font-size: 18px;
+}
+
+input, select{
+    padding: 10px;
+    width: 100%;
+    margin-top: 8px;
+    border-radius: 10px;
+    border: 2px solid #59176E;
+    background-color: #12091C;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+p{
+    margin: 5px 0;
+    color: #ff8b8b;
+}
+
+.btnPrp{
+    margin-top: 20px;
+    padding: 10px 25px;
+    background-color: #B201E9;
+    border: 2px solid #B201E9;
+    color: white;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+}
+
+a{
+    font-size: 13px;
+}
+
+.btnPrp:hover{
+    background-color: #020202;
+    transition: 0.2s;
+}
+
+
+select option {
+    background-color: #12091C;
+    color: white;
+}

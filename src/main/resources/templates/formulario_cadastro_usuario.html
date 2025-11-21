@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Roadie Cadastro de Usuários</title>
+    <link rel="stylesheet" th:href="@{/css/formulario_cadastro_usuario.css}">
 </head>
 <body>
+
+  <div class="formContainer">
     <form th:action="@{/usuarios/salvar}" th:object="${usuario}" method="post">
 
         <input type="hidden" th:field="*{id}">
@@ -12,22 +15,30 @@
         <label>Nome:</label>
         <input type="text" th:field="*{nome}">
         <p th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></p>
-        <br>
 
         <label>Email:</label>
         <input type="email" th:field="*{email}">
         <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
-        <br>
 
-        <label>Area de Atuação:</label>
+        <label>Área de Atuação:</label>
         <input type="text" th:field="*{area_atuacao}">
-        <br>
 
         <label>Nível de Carreira:</label>
-        <input type="text" th:field="*{nivel_carreira}">
-        <br>
+        <select th:field="*{nivel_carreira}">
+            <option value="">-- Selecione --</option>
+            <option value="Junior">Júnior</option>
+            <option value="Pleno">Pleno</option>
+            <option value="Senior">Sênior</option>
+            <option value="Estagiario">Estagiário</option>
+            <option value="Trainee">Trainee</option>
+            <option value="Especialista">Especialista</option>
+            <option value="Lider">Líder</option>
+        </select>
 
-        <button type="submit">Cadastrar</button>
+        <button type="submit" class="btnPrp">Cadastrar</button>
+        <a class="btnPrp" th:href="@{/usuarios}">Voltar</a>
     </form>
+  </div>
+
 </body>
 </html>

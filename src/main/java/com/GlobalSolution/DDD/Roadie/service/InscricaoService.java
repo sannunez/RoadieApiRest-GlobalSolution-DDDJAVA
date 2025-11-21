@@ -34,4 +34,20 @@ public class InscricaoService {
     public Inscricao buscarPorId(Long id){return repository.findById(id).orElse(null);}
 
     public void deletar(Long id){repository.deleteById(id);}
+
+    public int contarInscricoesPorUsuario(Long usuarioId){
+        return repository.countByUsuarioId(usuarioId);
+    }
+
+    public List<TrilhaDeAprendizagem> listarTrilhasDoUsuario(Long usuarioId) {
+        List<Inscricao> inscricoes = repository.findByUsuarioId(usuarioId);
+        return inscricoes.stream()
+                .map(Inscricao::getTrilha) // pega só a trilha
+                .toList();
+    }
+
+    public int contarInscricoesEmTrilha(Long trilhaId){
+        return repository.countByTrilhaId(trilhaId);
+    }
+
 }

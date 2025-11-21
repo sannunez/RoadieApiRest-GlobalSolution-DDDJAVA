@@ -1,6 +1,8 @@
 package com.GlobalSolution.DDD.Roadie.controller;
 
 import com.GlobalSolution.DDD.Roadie.model.TrilhaDeAprendizagem;
+import com.GlobalSolution.DDD.Roadie.model.Usuario;
+import com.GlobalSolution.DDD.Roadie.service.InscricaoService;
 import com.GlobalSolution.DDD.Roadie.service.TrilhaDeAprendizagemService;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
@@ -8,19 +10,36 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 @Controller
 @RequestMapping("/trilhas")
 public class TrilhaDeAprendizagemController {
 
     private final TrilhaDeAprendizagemService service;
+    private final InscricaoService inscricaoService;
 
-    public TrilhaDeAprendizagemController(TrilhaDeAprendizagemService service) {
+    public TrilhaDeAprendizagemController(TrilhaDeAprendizagemService service, InscricaoService inscricaoService) {
         this.service = service;
+        this.inscricaoService = inscricaoService;
     }
 
     @GetMapping
     public String trilhas(Model model){
+
+        List<TrilhaDeAprendizagem> trilhas = service.listarTodos();
+
+        Map<Long, Integer> inscritosEmTrilha = new HashMap<>();
+
+        for(TrilhaDeAprendizagem t : trilhas){
+            int qtd = inscricaoService.contarInscricoesEmTrilha(t.getId());
+            inscritosEmTrilha.put(t.getId(), qtd);
+        }
+
         model.addAttribute("listaTrilhas", service.listarTodos());
+        model.addAttribute("inscritosEmTrilhaCount", inscritosEmTrilha);
         return "trilhas";
     }
 

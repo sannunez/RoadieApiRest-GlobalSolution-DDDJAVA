@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body{
+    background: linear-gradient(0deg, rgba(12, 13, 17, 1) 0%, rgba(17, 20, 25, 1) 50%, rgba(12, 13, 17, 1) 100%);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navMenu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    border-bottom: 1px solid #1A191F;
+}
+
+.navMenu a{
+    text-decoration: none;
+    padding: 10px 20px;
+    color: white;
+    border: 2px solid #B201E9;
+    border-radius: 10px;
+    font-weight: 600;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.navMenu a:hover{
+    background-color: #B201E9;
+    transition: 0.2s;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    margin-top: 30px;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+
+.card{
+    width: 100%;
+    max-width: 900px;
+    background-color: #020202;
+    border-radius: 25px;
+    padding: 20px 25px;
+    border: 2px solid #59176E;
+}
+
+
+.headerTrilha{
+    margin-bottom: 20px;
+}
+
+.headerTrilha h3{
+    font-size: 26px;
+    margin: 0;
+    color: #986BC1;
+}
+
+
+.infosContainer{
+    background-color: #12091C;
+    border: 2px solid #59176E;
+    border-radius: 15px;
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.infosContainer p{
+    margin: 0;
+    font-size: 16px;
+    color: #C79BEF;
+}
+
+p span{
+    color: white;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.btnPrp{
+    text-decoration: none;
+    padding: 10px 30px;
+    background-color: #B201E9;
+    border: 2px solid #B201E9;
+    color: white;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.btnPrp:hover{
+    background-color: #020202;
+    transition: 0.2s;
+}
+
+.inscritos{
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #986BC1;
+}
