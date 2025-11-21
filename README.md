@@ -20,6 +20,7 @@ A Roadie ambiciona ser democrática a todos, buscando não apenas estar presente
 - Como Executar o Projeto
 - Porta Padrão
 - Endpoints e Exemplos de Requisição
+- Tratamento de Erros
 - Autores
 
 ---
@@ -166,6 +167,13 @@ mvn clean install
 
   GET /inscricoes/cancelar/{userId}/{trilhaId} - Cancela a inscrição do usuário em uma trilha.
   <br>Procedimento: Na tela de usuários, clique em "Cancelar inscrição" para remover o vínculo entre usuário e trilha.
+
+---
+
+## ❌ **Tratamento de Erros**
+  - Os erros não impedem a aplicação de continuar funcionando. Ao ocorrer qualquer tipo de erro, o usuário é informado tanto na interface, quanto no terminal do Spring Boot que Diagnostica o código de Status, e exibe uma mensagem de erro própria especificando o problema.
+<img src="assets/img/ErroInterface.png" width="60%" />
+<img src="assets/img/ErroTerminal.png" width="40%" />
 
 ---
 - ## ✍️ Autores
